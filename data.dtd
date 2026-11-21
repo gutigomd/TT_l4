@@ -1,0 +1,13 @@
+﻿<!ELEMENT deliveryService (shipments)>
+<!ELEMENT shipments (shipment+)>
+<!ELEMENT shipment (trackingNumber, senderCity, recipientCity, weightKg, deliveryCost, sentDate, note?)>
+<!ATTLIST shipment
+    id ID #REQUIRED
+    status (created|transit|delivered) #REQUIRED>
+<!ELEMENT trackingNumber (#PCDATA)>
+<!ELEMENT senderCity (#PCDATA)>
+<!ELEMENT recipientCity (#PCDATA)>
+<!ELEMENT weightKg (#PCDATA)>
+<!ELEMENT deliveryCost (#PCDATA)>
+<!ELEMENT sentDate (#PCDATA)>
+<!ELEMENT note (#PCDATA)>

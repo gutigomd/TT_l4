@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<deliveryService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data.xsd">
+  <shipments>
+    <shipment id="S103" status="transit">
+      <trackingNumber>204500112288</trackingNumber>
+      <senderCity>Одеса</senderCity><recipientCity>Київ</recipientCity>
+      <weightKg>101.00</weightKg><deliveryCost>500.00</deliveryCost><sentDate>2026-10-01</sentDate>
+    </shipment>
+  </shipments>
+</deliveryService>

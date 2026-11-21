@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<deliveryService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data.xsd">
+  <shipments>
+    <shipment id="S105" status="created">
+      <trackingNumber>204500112233</trackingNumber>
+      <senderCity>Одеса</senderCity><recipientCity>Київ</recipientCity>
+      <weightKg>2.00</weightKg><deliveryCost>90.00</deliveryCost><sentDate>2026-10-01</sentDate>
+    </shipment>
+    <shipment id="S105" status="transit">
+      <trackingNumber>204500112233</trackingNumber>
+      <senderCity>Львів</senderCity><recipientCity>Київ</recipientCity>
+      <weightKg>4.00</weightKg><deliveryCost>110.00</deliveryCost><sentDate>2026-10-02</sentDate>
+    </shipment>
+  </shipments>
+</deliveryService>

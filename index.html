@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лабораторна робота №4 — Варіант 15 (Реєстр відправлень)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="loadxmldoc.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <h1>Реєстр відправлень служби доставки (XML DOM)</h1>
+  <div id="message" class="status-bar" role="status">Завантаження XML...</div>
+
+  <!-- Загрузка альтернативного / экспортированного XML -->
+  <div class="panel">
+    <h2>1. Завантаження та експорт XML</h2>
+    <div class="row">
+      <button id="reloadBtn" class="secondary">Перезавантажити data.xml</button>
+      <input id="xmlFileInput" type="file" accept=".xml">
+      <button id="exportBtn" class="success">Експортувати result.xml</button>
+    </div>
+  </div>
+
+  <!-- Фильтрация и сортировка -->
+  <div class="panel">
+    <h2>2. Відбір та сортування (за містом одержувача, статусом і датою)</h2>
+    <div class="row">
+      <input type="text" id="filterCity" placeholder="Місто одержувача (напр. Київ)">
+      <select id="filterStatus">
+        <option value="all">Усі статуси</option>
+        <option value="created">Створено (created)</option>
+        <option value="transit">У дорозі (transit)</option>
+        <option value="delivered">Доставлено (delivered)</option>
+      </select>
+      <select id="sortOrder">
+        <option value="asc">Дата: за зростанням</option>
+        <option value="desc">Дата: за спаданням</option>
+      </select>
+      <button id="applyFilterBtn">Застосувати фільтр</button>
+      <button id="resetFilterBtn" class="secondary">Скинути</button>
+    </div>
+  </div>
+
+  <!-- Редактирование по ID -->
+  <div class="panel">
+    <h2>3. Редагування вартості та статусу за ID</h2>
+    <div class="row">
+      <input type="text" id="editId" placeholder="ID (напр. S001)">
+      <input type="number" step="0.01" min="0" id="editCost" placeholder="Нова вартість, грн">
+      <select id="editStatus">
+        <option value="created">Створено</option>
+        <option value="transit">У дорозі</option>
+        <option value="delivered">Доставлено</option>
+      </select>
+      <button id="updateBtn">Оновити запис</button>
+    </div>
+  </div>
+
+  <!-- Добавление нового отправления -->
+  <div class="panel">
+    <h2>4. Додавання нового відправлення</h2>
+    <div class="row">
+      <input type="text" id="newId" placeholder="ID (напр. S010)">
+      <input type="text" id="newTracking" placeholder="Трек-номер (12 цифр)">
+      <input type="text" id="newSender" placeholder="Місто відправника">
+      <input type="text" id="newRecipient" placeholder="Місто одержувача">
+      <input type="number" step="0.01" id="newWeight" placeholder="Вага, кг (0..100)">
+      <input type="number" step="0.01" id="newCost" placeholder="Вартість, грн">
+      <input type="date" id="newDate">
+      <select id="newStatus">
+        <option value="created">Створено</option>
+        <option value="transit">У дорозі</option>
+        <option value="delivered">Доставлено</option>
+      </select>
+      <input type="text" id="newNote" placeholder="Примітка (необов'язково)">
+      <button id="addBtn" class="success">Додати відправлення</button>
+    </div>
+  </div>
+
+  <!-- Таблица отправлений -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Трек-номер</th>
+        <th>Маршрут (Звідки → Куди)</th>
+        <th>Вага, кг</th>
+        <th>Вартість, грн</th>
+        <th>Дата відправлення</th>
+        <th>Статус</th>
+        <th>Примітка</th>
+        <th>Дія</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div id="summary" class="summary"></div>
+</div>
+</body>
+</html>

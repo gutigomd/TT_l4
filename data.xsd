@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="TrackingNumberType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonEmptyStringType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="WeightType">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CostType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="created"/>
+      <xs:enumeration value="transit"/>
+      <xs:enumeration value="delivered"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="deliveryService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shipments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="shipment" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="trackingNumber" type="TrackingNumberType"/>
+                    <xs:element name="senderCity" type="NonEmptyStringType"/>
+                    <xs:element name="recipientCity" type="NonEmptyStringType"/>
+                    <xs:element name="weightKg" type="WeightType"/>
+                    <xs:element name="deliveryCost" type="CostType"/>
+                    <xs:element name="sentDate" type="xs:date"/>
+                    <xs:element name="note" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:ID" use="required"/>
+                  <xs:attribute name="status" type="StatusType" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

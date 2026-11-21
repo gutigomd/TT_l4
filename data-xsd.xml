@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<deliveryService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="data.xsd">
+  <shipments>
+    <shipment id="S001" status="delivered">
+      <trackingNumber>204500112233</trackingNumber>
+      <senderCity>Одеса</senderCity>
+      <recipientCity>Київ</recipientCity>
+      <weightKg>2.50</weightKg>
+      <deliveryCost>115.00</deliveryCost>
+      <sentDate>2026-10-01</sentDate>
+      <note>Крихке пакування</note>
+    </shipment>
+    <shipment id="S002" status="transit">
+      <trackingNumber>204500112234</trackingNumber>
+      <senderCity>Львів</senderCity>
+      <recipientCity>Одеса</recipientCity>
+      <weightKg>14.80</weightKg>
+      <deliveryCost>240.50</deliveryCost>
+      <sentDate>2026-10-03</sentDate>
+      <note>Доставка кур'єром до дверей</note>
+    </shipment>
+    <shipment id="S003" status="created">
+      <trackingNumber>204500112235</trackingNumber>
+      <senderCity>Харків</senderCity>
+      <recipientCity>Київ</recipientCity>
+      <weightKg>0.50</weightKg>
+      <deliveryCost>70.00</deliveryCost>
+      <sentDate>2026-10-05</sentDate>
+    </shipment>
+    <shipment id="S004" status="delivered">
+      <trackingNumber>204500112236</trackingNumber>
+      <senderCity>Дніпро</senderCity>
+      <recipientCity>Львів</recipientCity>
+      <weightKg>100.00</weightKg>
+      <deliveryCost>890.00</deliveryCost>
+      <sentDate>2026-09-28</sentDate>
+      <note>Гранична допустима вага 100 кг</note>
+    </shipment>
+    <shipment id="S005" status="transit">
+      <trackingNumber>204500112237</trackingNumber>
+      <senderCity>Одеса</senderCity>
+      <recipientCity>Харків</recipientCity>
+      <weightKg>5.25</weightKg>
+      <deliveryCost>145.00</deliveryCost>
+      <sentDate>2026-10-04</sentDate>
+      <note>Післяплата 1500 грн</note>
+    </shipment>
+    <shipment id="S006" status="created">
+      <trackingNumber>204500112238</trackingNumber>
+      <senderCity>Київ</senderCity>
+      <recipientCity>Одеса</recipientCity>
+      <weightKg>1.20</weightKg>
+      <deliveryCost>0.00</deliveryCost>
+      <sentDate>2026-10-06</sentDate>
+      <note>Безкоштовна акційна доставка</note>
+    </shipment>
+    <shipment id="S007" status="delivered">
+      <trackingNumber>204500112239</trackingNumber>
+      <senderCity>Вінниця</senderCity>
+      <recipientCity>Київ</recipientCity>
+      <weightKg>8.40</weightKg>
+      <deliveryCost>180.75</deliveryCost>
+      <sentDate>2026-09-30</sentDate>
+    </shipment>
+    <shipment id="S008" status="transit">
+      <trackingNumber>204500112240</trackingNumber>
+      <senderCity>Запоріжжя</senderCity>
+      <recipientCity>Дніпро</recipientCity>
+      <weightKg>22.10</weightKg>
+      <deliveryCost>310.00</deliveryCost>
+      <sentDate>2026-10-02</sentDate>
+      <note>Палетна доставка</note>
+    </shipment>
+    <shipment id="S009" status="created">
+      <trackingNumber>204500112241</trackingNumber>
+      <senderCity>Одеса</senderCity>
+      <recipientCity>Львів</recipientCity>
+      <weightKg>3.75</weightKg>
+      <deliveryCost>130.00</deliveryCost>
+      <sentDate>2026-10-07</sentDate>
+      <note>Термінове відправлення</note>
+    </shipment>
+  </shipments>
+</deliveryService>
